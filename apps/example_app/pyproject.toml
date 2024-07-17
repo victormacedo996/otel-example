@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "example-fastapi-otel"
+version = "0.1.0"
+description = ""
+authors = ["victor macedo <victormacedo996@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.9"
+fastapi = "^0.111.1"
+uvicorn = {extras = ["standard"], version = "^0.30.1"}
+opentelemetry-instrumentation-fastapi = "^0.46b0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

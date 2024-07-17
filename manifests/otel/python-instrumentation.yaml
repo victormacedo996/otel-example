@@ -1,0 +1,24 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: Instrumentation
+metadata:
+  name: python-instrumentation
+spec:
+  exporter:
+    endpoint: http://simplest-collector.mlops.svc.cluster.local:4318
+  propagators:
+    - tracecontext
+    - baggage
+  sampler:
+    type: parentbased_traceidratio
+    argument: '0.5'
+  python:
+    env:
+      - name: OTEL_EXPORTER_OTLP_INSECURE
+        value: "true"
+      - name: OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED
+        value: "true"
+      - name: OTEL_METRICS_EXPORTER
+        value: otlp_proto_http
+      - name: OTEL_PYTHON_DISABLED_INSTRUMENTATIONS
+        value: opentelemetry-instrumentation-system-metrics
+ 

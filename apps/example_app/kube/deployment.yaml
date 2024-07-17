@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-autoinstrumentation-go
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: auto-instrumentation-go
+  template:
+    metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-python: 'true'
+      labels:
+        app: auto-instrumentation-go
+    spec:
+      containers:
+        - name: auto-instrumentation-go
+          image: victormacedo996/fastapi-otel-example:v0.0.1
+          env:
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: service.name=fastapi-example
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://simplest-collector.default.svc.cluster.local:4318"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 1
+              memory: 1Gi
+            requests:
+              cpu: 0.5
+              memory: 100Mi
