@@ -3,6 +3,19 @@ kind: OpenTelemetryCollector
 metadata:
   name: simplest
 spec:
+  mode: deployment
+  env:
+    - name: NEW_RELIC_LICENSE_KEY
+      valueFrom:
+        secretKeyRef:
+          key: NEW_RELIC_LICENSE_KEY
+          name: collector-secret
+    - name: OTEL_EXPORTER_OTLP_HEADERS
+      value: "api-key=$(NEW_RELIC_LICENSE_KEY)"
+    - name: dale
+      value: doly
+    - name: tey
+      value: "aaaa-$(dale)"
   config: |
     receivers:
       otlp:
@@ -11,20 +24,23 @@ spec:
             endpoint: 0.0.0.0:4317
           http:
             endpoint: 0.0.0.0:4318
-    processors:
-
     exporters:
-      logging:
-      prometheus:
-        endpoint: "0.0.0.0:4444"
-
+      debug:
+        verbosity: detailed
+    processors:
+      batch: {}
+      filter/ottl:
+          error_mode: ignore
+          metrics:
+            metric:
+                - 'type != METRIC_DATA_TYPE_HISTOGRAM'
     service:
       pipelines:
         traces:
           receivers: [otlp]
-          processors: []
-          exporters: [logging]
+          processors: [batch]
+          exporters: [debug]
         metrics:
           receivers: [otlp]
-          processors: []
-          exporters: [logging, prometheus]
+          processors: [batch, filter/ottl]
+          exporters: [debug]

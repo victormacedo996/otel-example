@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: collector-secret
+data:
+  NEW_RELIC_LICENSE_KEY: "apikey=<API_KEY>"
+  # MC4wLjAuMDo0MzE3

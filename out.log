@@ -1,0 +1,1075 @@
+2024-07-24T18:13:21.837Z	info	service@v0.103.0/service.go:115	Setting up own telemetry...
+2024-07-24T18:13:21.837Z	info	service@v0.103.0/telemetry.go:96	Serving metrics	{"address": ":8888", "level": "Normal"}
+2024-07-24T18:13:21.837Z	info	exporter@v0.103.0/exporter.go:280	Development component. May change in the future.	{"kind": "exporter", "data_type": "metrics", "name": "debug"}
+2024-07-24T18:13:21.837Z	info	exporter@v0.103.0/exporter.go:280	Development component. May change in the future.	{"kind": "exporter", "data_type": "traces", "name": "debug"}
+2024-07-24T18:13:21.838Z	info	service@v0.103.0/service.go:182	Starting otelcol...	{"Version": "0.103.1", "NumCPU": 16}
+2024-07-24T18:13:21.838Z	info	extensions/extensions.go:34	Starting extensions...
+2024-07-24T18:13:21.838Z	warn	internal@v0.103.0/warning.go:42	Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attacks. Enable the feature gate to change the default and remove this warning.	{"kind": "receiver", "name": "otlp", "data_type": "traces", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safeguards-against-denial-of-service-attacks", "feature gate ID": "component.UseLocalHostAsDefaultHost"}
+2024-07-24T18:13:21.838Z	info	otlpreceiver@v0.103.0/otlp.go:102	Starting GRPC server	{"kind": "receiver", "name": "otlp", "data_type": "traces", "endpoint": "0.0.0.0:4317"}
+2024-07-24T18:13:21.838Z	warn	internal@v0.103.0/warning.go:42	Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attacks. Enable the feature gate to change the default and remove this warning.	{"kind": "receiver", "name": "otlp", "data_type": "traces", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safeguards-against-denial-of-service-attacks", "feature gate ID": "component.UseLocalHostAsDefaultHost"}
+2024-07-24T18:13:21.838Z	info	otlpreceiver@v0.103.0/otlp.go:152	Starting HTTP server	{"kind": "receiver", "name": "otlp", "data_type": "traces", "endpoint": "0.0.0.0:4318"}
+2024-07-24T18:13:21.838Z	info	service@v0.103.0/service.go:208	Everything is ready. Begin running and processing data.
+2024-07-24T18:13:21.838Z	warn	localhostgate/featuregate.go:63	The default endpoints for all servers in components will change to use localhost instead of 0.0.0.0 in a future version. Use the feature gate to preview the new default.	{"feature gate ID": "component.UseLocalHostAsDefaultHost"}
+2024-07-24T18:13:31.657Z	info	MetricsExporter	{"kind": "exporter", "data_type": "metrics", "name": "debug", "resource metrics": 1, "metrics": 3, "data points": 9}
+2024-07-24T18:13:31.657Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.25.0)
+     -> service.name: Str(example-autoinstrumentation-go)
+     -> k8s.container.name: Str(auto-instrumentation-go)
+     -> k8s.deployment.name: Str(example-autoinstrumentation-go)
+     -> k8s.namespace.name: Str(default)
+     -> k8s.node.name: Str(kind-control-plane)
+     -> k8s.pod.name: Str(example-autoinstrumentation-go-769cf57b9b-mh59t)
+     -> k8s.replicaset.name: Str(example-autoinstrumentation-go-769cf57b9b)
+     -> service.instance.id: Str(default.example-autoinstrumentation-go-769cf57b9b-mh59t.auto-instrumentation-go)
+     -> service.version: Str(v0.0.1)
+     -> telemetry.auto.version: Str(0.46b0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope opentelemetry.instrumentation.asyncio 0.46b0
+Metric #0
+Descriptor:
+     -> Name: asyncio.process.duration
+     -> Description: Duration of asyncio process
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> type: Str(future)
+     -> state: Str(finished)
+StartTimestamp: 2024-07-24 18:07:32.424332051 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 1
+Sum: 0.000035
+Min: 0.000035
+Max: 0.000035
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+ScopeMetrics #1
+ScopeMetrics SchemaURL: 
+InstrumentationScope opentelemetry.instrumentation.fastapi 0.46b0
+Metric #0
+Descriptor:
+     -> Name: http.server.duration
+     -> Description: Duration of HTTP client requests.
+     -> Unit: ms
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+     -> http.status_code: Int(404)
+StartTimestamp: 2024-07-24 18:08:25.246804454 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 2
+Sum: 2.000000
+Min: 1.000000
+Max: 1.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 2
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+StartTimestamp: 2024-07-24 18:08:25.246804454 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 2
+Sum: 2.000000
+Min: 1.000000
+Max: 1.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 2
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+     -> http.target: Str(/foobar)
+StartTimestamp: 2024-07-24 18:08:25.246804454 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 8
+Sum: 7.000000
+Min: 0.000000
+Max: 1.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 1
+Buckets #1, Count: 7
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+     -> http.status_code: Int(200)
+     -> http.target: Str(/foobar)
+StartTimestamp: 2024-07-24 18:08:25.246804454 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 12
+Sum: 12.000000
+Min: 1.000000
+Max: 1.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 12
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Metric #1
+Descriptor:
+     -> Name: http.server.response.size
+     -> Description: measures the size of HTTP response messages (compressed).
+     -> Unit: By
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+     -> http.status_code: Int(404)
+StartTimestamp: 2024-07-24 18:08:25.24686668 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 2
+Sum: 44.000000
+Min: 22.000000
+Max: 22.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 0
+Buckets #2, Count: 0
+Buckets #3, Count: 2
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+StartTimestamp: 2024-07-24 18:08:25.24686668 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 2
+Sum: 1181.000000
+Min: 250.000000
+Max: 931.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 0
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 1
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 1
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+     -> http.target: Str(/foobar)
+StartTimestamp: 2024-07-24 18:08:25.24686668 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 8
+Sum: 200.000000
+Min: 25.000000
+Max: 25.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 0
+Buckets #2, Count: 0
+Buckets #3, Count: 8
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> http.host: Str(127.0.0.1:8000)
+     -> http.flavor: Str(1.1)
+     -> http.server_name: Str(localhost:8000)
+     -> net.host.port: Int(8000)
+     -> http.method: Str(GET)
+     -> http.scheme: Str(http)
+     -> http.status_code: Int(200)
+     -> http.target: Str(/foobar)
+StartTimestamp: 2024-07-24 18:08:25.24686668 +0000 UTC
+Timestamp: 2024-07-24 18:13:31.55129036 +0000 UTC
+Count: 12
+Sum: 300.000000
+Min: 25.000000
+Max: 25.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 0
+Buckets #2, Count: 0
+Buckets #3, Count: 12
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"kind": "exporter", "data_type": "metrics", "name": "debug"}
+2024-07-24T18:13:36.666Z	info	TracesExporter	{"kind": "exporter", "data_type": "traces", "name": "debug", "resource spans": 1, "spans": 36}
+2024-07-24T18:13:36.667Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.25.0)
+     -> service.name: Str(example-autoinstrumentation-go)
+     -> k8s.container.name: Str(auto-instrumentation-go)
+     -> k8s.deployment.name: Str(example-autoinstrumentation-go)
+     -> k8s.namespace.name: Str(default)
+     -> k8s.node.name: Str(kind-control-plane)
+     -> k8s.pod.name: Str(example-autoinstrumentation-go-769cf57b9b-mh59t)
+     -> k8s.replicaset.name: Str(example-autoinstrumentation-go-769cf57b9b)
+     -> service.instance.id: Str(default.example-autoinstrumentation-go-769cf57b9b-mh59t.auto-instrumentation-go)
+     -> service.version: Str(v0.0.1)
+     -> telemetry.auto.version: Str(0.46b0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope opentelemetry.instrumentation.asgi 0.46b0
+Span #0
+    Trace ID       : 31bc0183a9553e3b7361690a2f80d239
+    Parent ID      : 748e5118990eb4c6
+    ID             : 6a369ff442e71a74
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.117959699 +0000 UTC
+    End time       : 2024-07-24 18:13:33.118097377 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #1
+    Trace ID       : 31bc0183a9553e3b7361690a2f80d239
+    Parent ID      : 748e5118990eb4c6
+    ID             : e757f75dc7731bdb
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.11813076 +0000 UTC
+    End time       : 2024-07-24 18:13:33.118150557 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #2
+    Trace ID       : 31bc0183a9553e3b7361690a2f80d239
+    Parent ID      : 
+    ID             : 748e5118990eb4c6
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:33.11775678 +0000 UTC
+    End time       : 2024-07-24 18:13:33.118156397 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #3
+    Trace ID       : 03e7c98f3b5da552387b62c71ce5af04
+    Parent ID      : 8c4e96f0345ed855
+    ID             : 968641ac497d38e0
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.251755543 +0000 UTC
+    End time       : 2024-07-24 18:13:33.251907718 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #4
+    Trace ID       : 03e7c98f3b5da552387b62c71ce5af04
+    Parent ID      : 8c4e96f0345ed855
+    ID             : 5cdfa7f4add90967
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.251945959 +0000 UTC
+    End time       : 2024-07-24 18:13:33.251969553 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #5
+    Trace ID       : 03e7c98f3b5da552387b62c71ce5af04
+    Parent ID      : 
+    ID             : 8c4e96f0345ed855
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:33.2514764 +0000 UTC
+    End time       : 2024-07-24 18:13:33.251976887 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #6
+    Trace ID       : 855c12e22365325e1d9fc43811334b06
+    Parent ID      : 4d32d71ea31df3a4
+    ID             : 5b2b248e4ef86269
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.387552203 +0000 UTC
+    End time       : 2024-07-24 18:13:33.387745254 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #7
+    Trace ID       : 855c12e22365325e1d9fc43811334b06
+    Parent ID      : 4d32d71ea31df3a4
+    ID             : c9ecc77703ddcfcf
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.387786171 +0000 UTC
+    End time       : 2024-07-24 18:13:33.387811799 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #8
+    Trace ID       : 855c12e22365325e1d9fc43811334b06
+    Parent ID      : 
+    ID             : 4d32d71ea31df3a4
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:33.387303778 +0000 UTC
+    End time       : 2024-07-24 18:13:33.387819443 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #9
+    Trace ID       : 1209624817366f0b53015aaa3b2e7b55
+    Parent ID      : a549cffdf0677835
+    ID             : 13e6488803ab996a
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.523687815 +0000 UTC
+    End time       : 2024-07-24 18:13:33.523854086 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #10
+    Trace ID       : 1209624817366f0b53015aaa3b2e7b55
+    Parent ID      : a549cffdf0677835
+    ID             : d50a4949d447cb17
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:33.523892418 +0000 UTC
+    End time       : 2024-07-24 18:13:33.523916593 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #11
+    Trace ID       : 1209624817366f0b53015aaa3b2e7b55
+    Parent ID      : 
+    ID             : a549cffdf0677835
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:33.523390068 +0000 UTC
+    End time       : 2024-07-24 18:13:33.523923526 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #12
+    Trace ID       : 0f59c709dba62b7e59043bcf605a5091
+    Parent ID      : 7bdd385a5c00f8dc
+    ID             : 6a1821d8ee7105a9
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.035191323 +0000 UTC
+    End time       : 2024-07-24 18:13:34.035351402 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #13
+    Trace ID       : 0f59c709dba62b7e59043bcf605a5091
+    Parent ID      : 7bdd385a5c00f8dc
+    ID             : 2e4d73aa4f176eb7
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.035387219 +0000 UTC
+    End time       : 2024-07-24 18:13:34.035410002 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #14
+    Trace ID       : 0f59c709dba62b7e59043bcf605a5091
+    Parent ID      : 
+    ID             : 7bdd385a5c00f8dc
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:34.034974216 +0000 UTC
+    End time       : 2024-07-24 18:13:34.035416234 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #15
+    Trace ID       : 38db566bf81efafb33cd4dbdc3db276a
+    Parent ID      : 601670511947eabd
+    ID             : 2cd99ad1f1f17322
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.416238907 +0000 UTC
+    End time       : 2024-07-24 18:13:34.416383248 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #16
+    Trace ID       : 38db566bf81efafb33cd4dbdc3db276a
+    Parent ID      : 601670511947eabd
+    ID             : eedaba75721b09ec
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.41641672 +0000 UTC
+    End time       : 2024-07-24 18:13:34.416438441 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #17
+    Trace ID       : 38db566bf81efafb33cd4dbdc3db276a
+    Parent ID      : 
+    ID             : 601670511947eabd
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:34.416002886 +0000 UTC
+    End time       : 2024-07-24 18:13:34.416443831 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #18
+    Trace ID       : 2c3b0ecca17b147d122d3a7f01b97343
+    Parent ID      : 3de30b4ae8c1887e
+    ID             : d776260e962714e8
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.546225533 +0000 UTC
+    End time       : 2024-07-24 18:13:34.546383128 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #19
+    Trace ID       : 2c3b0ecca17b147d122d3a7f01b97343
+    Parent ID      : 3de30b4ae8c1887e
+    ID             : 4a046173134cf49d
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.546417342 +0000 UTC
+    End time       : 2024-07-24 18:13:34.546444072 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #20
+    Trace ID       : 2c3b0ecca17b147d122d3a7f01b97343
+    Parent ID      : 
+    ID             : 3de30b4ae8c1887e
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:34.545909482 +0000 UTC
+    End time       : 2024-07-24 18:13:34.546449633 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #21
+    Trace ID       : 6eac24373cfb7bca1f64551a15af7e37
+    Parent ID      : 0bb152addd77647a
+    ID             : 74b4348ca94e48c1
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.968446118 +0000 UTC
+    End time       : 2024-07-24 18:13:34.968616928 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #22
+    Trace ID       : 6eac24373cfb7bca1f64551a15af7e37
+    Parent ID      : 0bb152addd77647a
+    ID             : f369da8125c4c95b
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:34.96865569 +0000 UTC
+    End time       : 2024-07-24 18:13:34.968679936 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #23
+    Trace ID       : 6eac24373cfb7bca1f64551a15af7e37
+    Parent ID      : 
+    ID             : 0bb152addd77647a
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:34.968210357 +0000 UTC
+    End time       : 2024-07-24 18:13:34.968687069 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #24
+    Trace ID       : 9b167c2454bb9633047ac4f911714a0a
+    Parent ID      : dc90b7f392740c87
+    ID             : d01b3fc1f8d56472
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.240429416 +0000 UTC
+    End time       : 2024-07-24 18:13:35.240593042 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #25
+    Trace ID       : 9b167c2454bb9633047ac4f911714a0a
+    Parent ID      : dc90b7f392740c87
+    ID             : 984a1d225e0a09ab
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.240632586 +0000 UTC
+    End time       : 2024-07-24 18:13:35.240663574 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #26
+    Trace ID       : 9b167c2454bb9633047ac4f911714a0a
+    Parent ID      : 
+    ID             : dc90b7f392740c87
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:35.240126389 +0000 UTC
+    End time       : 2024-07-24 18:13:35.240671228 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #27
+    Trace ID       : 275faff91f0b8b202b71433314f14273
+    Parent ID      : eaaf4b4b18434c42
+    ID             : 3cf9774d46b92c6d
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.553089206 +0000 UTC
+    End time       : 2024-07-24 18:13:35.553299359 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #28
+    Trace ID       : 275faff91f0b8b202b71433314f14273
+    Parent ID      : eaaf4b4b18434c42
+    ID             : bab1f939a0ea2c9a
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.55334791 +0000 UTC
+    End time       : 2024-07-24 18:13:35.553374871 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #29
+    Trace ID       : 275faff91f0b8b202b71433314f14273
+    Parent ID      : 
+    ID             : eaaf4b4b18434c42
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:35.552806116 +0000 UTC
+    End time       : 2024-07-24 18:13:35.553382064 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #30
+    Trace ID       : 4d47881dd78fd62f306f192e4d665e8a
+    Parent ID      : d8a7f45edb7d37d7
+    ID             : 192088b152ca3d89
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.816372822 +0000 UTC
+    End time       : 2024-07-24 18:13:35.816545475 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #31
+    Trace ID       : 4d47881dd78fd62f306f192e4d665e8a
+    Parent ID      : d8a7f45edb7d37d7
+    ID             : 0800a70d73cf2777
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.816594056 +0000 UTC
+    End time       : 2024-07-24 18:13:35.816623742 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #32
+    Trace ID       : 4d47881dd78fd62f306f192e4d665e8a
+    Parent ID      : 
+    ID             : d8a7f45edb7d37d7
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:35.816155836 +0000 UTC
+    End time       : 2024-07-24 18:13:35.81666028 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+Span #33
+    Trace ID       : f7fefe14bf5633a53cb8579a2d2da709
+    Parent ID      : 2c51dafdcb0fbf39
+    ID             : 4c76239da9f1e478
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.952705786 +0000 UTC
+    End time       : 2024-07-24 18:13:35.952897204 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.status_code: Int(200)
+     -> asgi.event.type: Str(http.response.start)
+Span #34
+    Trace ID       : f7fefe14bf5633a53cb8579a2d2da709
+    Parent ID      : 2c51dafdcb0fbf39
+    ID             : e19108170645cc84
+    Name           : GET /foobar http send
+    Kind           : Internal
+    Start time     : 2024-07-24 18:13:35.952946957 +0000 UTC
+    End time       : 2024-07-24 18:13:35.952987934 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> asgi.event.type: Str(http.response.body)
+Span #35
+    Trace ID       : f7fefe14bf5633a53cb8579a2d2da709
+    Parent ID      : 
+    ID             : 2c51dafdcb0fbf39
+    Name           : GET /foobar
+    Kind           : Server
+    Start time     : 2024-07-24 18:13:35.952377882 +0000 UTC
+    End time       : 2024-07-24 18:13:35.952995849 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> http.host: Str(127.0.0.1:8000)
+     -> net.host.port: Int(8000)
+     -> http.flavor: Str(1.1)
+     -> http.target: Str(/foobar)
+     -> http.url: Str(http://127.0.0.1:8000/foobar)
+     -> http.method: Str(GET)
+     -> http.server_name: Str(localhost:8000)
+     -> http.user_agent: Str(Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0)
+     -> net.peer.ip: Str(127.0.0.1)
+     -> net.peer.port: Int(53396)
+     -> http.route: Str(/foobar)
+     -> http.status_code: Int(200)
+	{"kind": "exporter", "data_type": "traces", "name": "debug"}
